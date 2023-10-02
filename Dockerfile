@@ -4,7 +4,7 @@ FROM golang:1.21 as base
 WORKDIR /app
 COPY . /app
 RUN go mod download
-RUN CGO_ENABLED=0 GOOS=linux go build api/main.go
+RUN CGO_ENABLED=0 GOOS=linux go build cmd/main.go
 FROM ubuntu:22.04
 
 COPY go.mod go.sum ./

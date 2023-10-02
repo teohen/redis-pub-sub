@@ -1,5 +1,5 @@
 #! /bin/bash
-image="teohen/rinha-de-backend"
+image="teohen/redis-pub-sub"
 tag="local"
 
 docker build --no-cache=true -t "${image}:${tag}" .

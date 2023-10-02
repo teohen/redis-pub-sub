@@ -4,30 +4,32 @@ services:
     image: teohen/redis-pub-sub:local
     hostname: app1
     environment:
-      - REDIS_HOST: redis
-      - REDIS_PORT: 6379
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     depends_on:
-      redis
-    expose: '8081'
+      - redis
+    expose:
+      - '8081'
     deploy:
       resources:
         limits: 
-        cpus: '1.0'
-        memory: '1.0GB'
+          cpus: '1.0'
+          memory: '1.0GB'
   app2:
     image: teohen/redis-pub-sub:local
     hostname: app2
     environment:
-      - REDIS_HOST: redis
-      - REDIS_PORT: 6379
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     depends_on:
-      redis
-    expose: '8082'
+      - redis
+    expose:
+      - '8082'
     deploy:
       resources:
         limits: 
-        cpus: '1.0'
-        memory: '1.0GB'
+          cpus: '1.0'
+          memory: '1.0GB'
   redis:
     image: redis:latest
     hostname: redis
@@ -35,8 +37,9 @@ services:
     ports:
       - '6379:6379'
     deploy:
-      resources: 
-        limits: 
+      resources:
+        limits:
           cpus: '1.0'
           memory: '1.0GB'
+
 
