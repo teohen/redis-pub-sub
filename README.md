@@ -1,2 +1,2 @@
 # redis-pub-sub
-teste
+testing the pub/sub features of Redis with a chat application
